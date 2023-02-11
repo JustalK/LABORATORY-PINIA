@@ -1,5 +1,9 @@
 # LABORATORY-PINIA
 
+## Experiences:
+
+- **Experience0001**: Testing a simple counter store
+
 ## Installation
 
 ```bash
