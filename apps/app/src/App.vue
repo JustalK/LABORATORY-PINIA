@@ -1,30 +1,47 @@
+<script setup lang="ts">
+import { RouterLink, RouterView } from 'vue-router'
+</script>
+
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div id="exp">
+    <div id="menu">
+      <template v-for="index in 2" :key="index">
+        <template v-if="index === 1">
+          <RouterLink to="/">Experience 1</RouterLink>
+        </template>
+        <template v-else>
+          <RouterLink :to="'/experience' + index">Experience {{ index }}</RouterLink>
+        </template>
+      </template>
+    </div>
+    <div id="view">
+      <RouterView />
+    </div>
   </div>
-  <router-view />
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<style scoped>
+body {
+  margin: 0;
+}
+#exp {
+  display: flex;
+  min-height: 100vh;
 }
 
-#nav {
-  padding: 30px;
+#menu {
+  background: grey;
+  width: 200px;
+  max-height: 100vh;
+  padding: 20px;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+#menu>a {
+  display: block;
+}
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+#view {
+  width: calc(100% - 200px);
+  padding: 20px;
 }
 </style>
