@@ -1,15 +1,13 @@
 <script setup lang="ts">
-import { useStore } from '../../stores/experience0002/store'
-import { useCountStore } from '../../stores/experience0003/store'
+import { useStore } from '../../stores/experience0003/store'
 
 const store = useStore();
-const storeCount = useCountStore();
 
-store.$subscribe((mutation, state) => {
-    storeCount.add()
-})
 </script>
 
 <template>
-    <div>Count: {{ storeCount.count }}</div>
+    <div>Count: {{ store.count }}</div>
+    <div>Double count: {{ store.double }}</div>
+    <button @click="store.$patch({ count: store.count + 1})">Increment</button>
+    <div>Double + 2: {{ store.whatever(2) }}</div>
 </template>
