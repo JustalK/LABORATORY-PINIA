@@ -5,7 +5,7 @@ import { RouterLink, RouterView } from 'vue-router'
 <template>
   <div id="exp">
     <div id="menu">
-      <template v-for="index in 3" :key="index">
+      <template v-for="index in 4" :key="index">
         <template v-if="index === 1">
           <RouterLink to="/">Experience 1</RouterLink>
         </template>
